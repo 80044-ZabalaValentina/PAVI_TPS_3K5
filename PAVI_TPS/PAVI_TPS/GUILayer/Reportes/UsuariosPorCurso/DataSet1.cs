@@ -1,0 +1,11 @@
+﻿namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso
+{
+
+
+    partial class DataSet1
+    {
+        partial class DataTable1DataTable
+        {
+        }
+    }
+}

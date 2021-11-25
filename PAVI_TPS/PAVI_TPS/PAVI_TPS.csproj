@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA1A2847-2A72-40B3-A4C6-29D3E19F818B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PAVI_TPS</RootNamespace>
+    <AssemblyName>PAVI_TPS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\AvanceUsuariosCursoService.cs" />
+    <Compile Include="BusinessLayer\CategoriaService.cs" />
+    <Compile Include="BusinessLayer\CursoService.cs" />
+    <Compile Include="BusinessLayer\ObjetivosCursoService.cs" />
+    <Compile Include="BusinessLayer\ObjetivoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\AvanceUsuariosCursoDao.cs" />
+    <Compile Include="DataAccessLayer\CategoriaDao.cs" />
+    <Compile Include="DataAccessLayer\CursoDao.cs" />
+    <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\ObjetivoDao.cs" />
+    <Compile Include="DataAccessLayer\ObjetivosCursoDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="Entities\AvanceUsuario.cs" />
+    <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\Objetivo.cs" />
+    <Compile Include="Entities\ObjetivosCurso.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\AvanceUsuariosXCurso\ActualizarAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AvanceUsuariosXCurso\ActualizarAvance.designer.cs">
+      <DependentUpon>ActualizarAvance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AvanceUsuariosXCurso\AvanceUsuariosPorCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AvanceUsuariosXCurso\AvanceUsuariosPorCurso.designer.cs">
+      <DependentUpon>AvanceUsuariosPorCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\ABMCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\ABMCategoria.designer.cs">
+      <DependentUpon>ABMCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\FormCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\FormCategorias.designer.cs">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cursos\ABMCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Cursos\ABMCurso.designer.cs">
+      <DependentUpon>ABMCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Cursos\FormCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Cursos\FormCursos.designer.cs">
+      <DependentUpon>FormCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FormulariosPrincipal\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FormulariosPrincipal\FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FormulariosPrincipal\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FormulariosPrincipal\FormPrincipal.designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ObjetivosPorCurso\ABMObjetivosCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ObjetivosPorCurso\ABMObjetivosCurso.designer.cs">
+      <DependentUpon>ABMObjetivosCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ObjetivosPorCurso\FormObjetivosCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ObjetivosPorCurso\FormObjetivosCurso.designer.cs">
+      <DependentUpon>FormObjetivosCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\ABMObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\ABMObjetivo.designer.cs">
+      <DependentUpon>ABMObjetivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\FormObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\FormObjetivos.designer.cs">
+      <DependentUpon>FormObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ObjetivosPorCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ObjetivosPorCurso.Designer.cs">
+      <DependentUpon>ObjetivosPorCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\UsuariosPorCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\UsuariosPorCurso.Designer.cs">
+      <DependentUpon>UsuariosPorCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\AvanceUsuariosXCurso\ActualizarAvance.resx">
+      <DependentUpon>ActualizarAvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AvanceUsuariosXCurso\AvanceUsuariosPorCurso.resx">
+      <DependentUpon>AvanceUsuariosPorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Categorias\ABMCategoria.resx">
+      <DependentUpon>ABMCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Categorias\FormCategorias.resx">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cursos\ABMCurso.resx">
+      <DependentUpon>ABMCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Cursos\FormCursos.resx">
+      <DependentUpon>FormCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FormulariosPrincipal\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FormulariosPrincipal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ObjetivosPorCurso\ABMObjetivosCurso.resx">
+      <DependentUpon>ABMObjetivosCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ObjetivosPorCurso\FormObjetivosCurso.resx">
+      <DependentUpon>FormObjetivosCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Objetivos\ABMObjetivo.resx">
+      <DependentUpon>ABMObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Objetivos\FormObjetivos.resx">
+      <DependentUpon>FormObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ObjetivosPorCurso.resx">
+      <DependentUpon>ObjetivosPorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ReportObjetivosPorCursos.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\UsuariosPorCurso\ReportUsuariosCurso.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\UsuariosPorCurso\UsuariosPorCurso.resx">
+      <DependentUpon>UsuariosPorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms">
+      <Version>140.340.80</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\330395_account_avatar_boss_business_businessman_icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
