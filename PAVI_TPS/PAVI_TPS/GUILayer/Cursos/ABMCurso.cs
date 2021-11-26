@@ -88,7 +88,19 @@ namespace TPS_PAVI.FormulariosABMC.Cursos
                 txtIdCurso.Text = oCursoSelected.IdCurso.ToString();
                 txtNombre.Text = oCursoSelected.NombreCurso;
                 txtDescripcion.Text = oCursoSelected.Descripcion;
-                txtFechaVigencia.Text = oCursoSelected.FechaVigencia.ToString();
+                string dia = oCursoSelected.FechaVigencia.Day.ToString();
+                if (dia.Length == 1)
+                {
+                    dia = "0" + dia;
+                }
+                string mes = oCursoSelected.FechaVigencia.Month.ToString();
+                if (mes.Length == 1)
+                {
+                    mes = "0" + mes;
+                }
+                string año = oCursoSelected.FechaVigencia.Year.ToString();
+                txtFechaVigencia.Text = dia + mes + año;
+                //txtFechaVigencia.Text = oCursoSelected.FechaVigencia.ToString();
                 cmbCategoria.Text = oCursoSelected.Categoria_Curso.NombreCategoria;
             }
         }

@@ -146,9 +146,9 @@ namespace TPS_PAVI.FormulariosABMC.Cursos
             // 
             this.txtFechaVigencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaVigencia.Location = new System.Drawing.Point(166, 66);
-            this.txtFechaVigencia.Mask = "0000/00/00";
+            this.txtFechaVigencia.Mask = "00/00/0000";
             this.txtFechaVigencia.Name = "txtFechaVigencia";
-            this.txtFechaVigencia.Size = new System.Drawing.Size(55, 23);
+            this.txtFechaVigencia.Size = new System.Drawing.Size(85, 23);
             this.txtFechaVigencia.TabIndex = 16;
             this.txtFechaVigencia.ValidatingType = typeof(System.DateTime);
             // 
