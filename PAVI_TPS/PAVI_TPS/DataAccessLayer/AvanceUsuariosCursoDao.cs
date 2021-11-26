@@ -39,8 +39,8 @@ namespace TPS_PAVI.DataAccessLayer
             if (parametros.ContainsKey("IdCurso"))
                 strSql += " (au.id_curso = @IdCurso) ";
 
-            if (parametros.ContainsKey("IdUsuario"))
-                strSql += " AND (au.id_usuario = @IdUsuario) ";
+            if (parametros.ContainsKey("Usuario"))
+                strSql += " AND (u.usuario LIKE '%' + @Usuario + '%') ";
 
             var resultado = DataManager.GetInstance().ConsultaSQL(strSql, parametros);
 
@@ -49,6 +49,8 @@ namespace TPS_PAVI.DataAccessLayer
 
             return lst;
         }
+
+        
 
         public IList<AvanceUsuario> GetByCurso(Dictionary<string, object> parametros)
         {

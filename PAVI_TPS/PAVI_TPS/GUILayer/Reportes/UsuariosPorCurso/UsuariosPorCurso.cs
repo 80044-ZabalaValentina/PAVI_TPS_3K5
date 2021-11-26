@@ -55,11 +55,12 @@ namespace PAVI_TPS.GUILayer.Reportes
 
                 rpvUsuarios.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("prIdCurso", idCurso.ToString()) });
 
+                //DATASOURCE
+                rpvUsuarios.LocalReport.DataSources.Clear();
+                rpvUsuarios.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", DataManager.GetInstance().ConsultaSQL(strSql, parametros)));
+                rpvUsuarios.RefreshReport();
             }
-            //DATASOURCE
-            rpvUsuarios.LocalReport.DataSources.Clear();
-            rpvUsuarios.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", DataManager.GetInstance().ConsultaSQL(strSql, parametros)));
-            rpvUsuarios.RefreshReport();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

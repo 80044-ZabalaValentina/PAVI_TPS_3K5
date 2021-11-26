@@ -22,5 +22,10 @@ namespace TPS_PAVI.BusinessLayer
         {
             return usuarioDao.GetByFilters(filtros);
         }
+
+        internal IList<Usuario> UsuarioPorCurso(Dictionary<string, object> filtros)
+        {
+            return usuarioDao.GetByUsuario(filtros);
+        }
     }
 }

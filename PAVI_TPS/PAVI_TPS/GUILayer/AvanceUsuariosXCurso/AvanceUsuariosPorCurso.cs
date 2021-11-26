@@ -29,9 +29,7 @@ namespace TPS_PAVI.GUILayer
         private void frmAvanceUsuarioCurso_Load(object sender, EventArgs e)
         {
             InicializarFormulario();
-            LlenarCombo(cboCursos, oCursoService.ObtenerTodos(), "NombreCurso", "IdCurso");
-            LlenarCombo(cboUsuarios, usuarioService.ObtenerTodos(), "NombreUsuario", "IdUsuario");
-            
+            LlenarCombo(cboCursos, oCursoService.ObtenerTodos(), "NombreCurso", "IdCurso");            
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -47,8 +45,9 @@ namespace TPS_PAVI.GUILayer
             dgvUsuariosCurso.DataSource = avanceUsuarioService.ObtenerTodos();
             cboCursos.SelectedIndex = -1;
             cboCursos.Enabled = true;
-            cboUsuarios.SelectedIndex = -1;
-            cboUsuarios.Enabled = false;
+            txtUsuario.Text = "";
+            txtUsuario.Enabled = false;
+            btnFiltrar.Enabled = false;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -59,7 +58,8 @@ namespace TPS_PAVI.GUILayer
             if (cboCursos.Text != string.Empty)
             {
                 //Recuperamos el valor de la propiedad
-                filters.Add("IdCurso", cboCursos.SelectedValue);
+                filters.Add("IdCurso", cboCursos.SelectedValue);               
+
             }
             
             if (filters.Count > 0)
@@ -67,7 +67,9 @@ namespace TPS_PAVI.GUILayer
                 dgvUsuariosCurso.DataSource = avanceUsuarioService.ObtenerPorCurso(filters);
                 cboCursos.Enabled = false;
                 btnConsultar.Enabled = false;
-                cboUsuarios.Enabled = true;
+                txtUsuario.Enabled = true;
+                btnFiltrar.Enabled = true;
+        
             }
             else
             {
@@ -80,11 +82,12 @@ namespace TPS_PAVI.GUILayer
             var filters = new Dictionary<string, object>();
 
             //Validar si solo el combo 'usuarios' esta seleccionado
-            if (cboUsuarios.Text != string.Empty)
+            if (txtUsuario.Text != string.Empty)
             {
                 //Recuperamos el valor de la propiedad
                 filters.Add("IdCurso", cboCursos.SelectedValue);
-                filters.Add("IdUsuario", cboUsuarios.SelectedValue);
+                string usu = txtUsuario.Text;
+                filters.Add("Usuario", usu);
             }
             if (filters.Count > 0)
             {
@@ -101,7 +104,10 @@ namespace TPS_PAVI.GUILayer
             InicializarFormulario();
             btnConsultar.Enabled = true;
             btnActualizarAvance.Enabled = false;
+            txtUsuario.Enabled = false;
+            btnFiltrar.Enabled = false;
         }
+
         private void dgvUsuariosCurso_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnActualizarAvance.Enabled = true;
@@ -176,7 +182,5 @@ namespace TPS_PAVI.GUILayer
             dgvUsuariosCurso.AutoResizeRows(
                 DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
-
-        
     }
 }

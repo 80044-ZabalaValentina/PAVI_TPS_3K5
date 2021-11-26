@@ -27,19 +27,22 @@ namespace PAVI_TPS.GUILayer.Reportes.CantidadObjetivosPorCursos
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            string strSql = "SELECT oc.id_curso as idCurso, c.nombre as curso ,COUNT(*) as cantidad" +
+            string strSql = "SELECT oc.id_curso as idCurso, c.nombre as curso, COUNT(*) as cantidad" +
                             " FROM ObjetivosCursos oc, Objetivos o, Cursos c" +
                             " WHERE oc.id_objetivo = o.id_objetivo" +
-                            " AND oc.id_curso = c.id_curso " +
-                            " AND oc.borrado = @borrado" +
-                            " GROUP BY  oc.id_curso,c.nombre";
+                            " AND oc.id_curso = c.id_curso" +
+                            " AND oc.borrado = 0 " +
+                            " GROUP BY oc.id_curso,c.nombre";
 
-            Dictionary<string, object> parametros = new Dictionary<string, object>();
-            parametros.Add("borrado", 0);
             //Data source
             rpvObjetivos.LocalReport.DataSources.Clear();
-            rpvObjetivos.LocalReport.DataSources.Add(new ReportDataSource("DataSet2", DataManager.GetInstance().ConsultaSQL(strSql,parametros)));
+            rpvObjetivos.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", DataManager.GetInstance().ConsultaSQL(strSql)));
                     
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

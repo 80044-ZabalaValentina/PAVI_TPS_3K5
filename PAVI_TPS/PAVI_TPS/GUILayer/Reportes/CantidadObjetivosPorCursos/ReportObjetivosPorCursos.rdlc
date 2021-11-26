@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet2">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>DataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -388,10 +388,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet2</DataSetName>
-            <Top>1.29328cm</Top>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>1.26682cm</Top>
             <Left>2.98662cm</Left>
-            <Height>5.05292cm</Height>
+            <Height>5.07938cm</Height>
             <Width>9.96062cm</Width>
             <Style>
               <Border>

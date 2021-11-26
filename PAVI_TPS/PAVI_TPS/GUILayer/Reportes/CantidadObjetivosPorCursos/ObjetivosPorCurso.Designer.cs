@@ -64,6 +64,7 @@ namespace PAVI_TPS.GUILayer.Reportes.CantidadObjetivosPorCursos
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmObjetivosPorCurso
             // 
@@ -74,7 +75,8 @@ namespace PAVI_TPS.GUILayer.Reportes.CantidadObjetivosPorCursos
             this.Controls.Add(this.rpvObjetivos);
             this.Controls.Add(this.btnGenerar);
             this.Name = "frmObjetivosPorCurso";
-            this.Text = "ObjetivosPorCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Objetivos por curso";
             this.Load += new System.EventHandler(this.ObjetivosPorCurso_Load);
             this.ResumeLayout(false);
 

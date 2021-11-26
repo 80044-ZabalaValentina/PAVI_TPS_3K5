@@ -35,11 +35,11 @@ namespace TPS_PAVI.GUILayer
             this.btnConsultar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.cboUsuarios = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiarBusqueda = new System.Windows.Forms.Button();
             this.btnActualizarAvance = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuariosCurso)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,8 +89,8 @@ namespace TPS_PAVI.GUILayer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.btnFiltrar);
-            this.groupBox1.Controls.Add(this.cboUsuarios);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.groupBox1.Location = new System.Drawing.Point(27, 67);
@@ -110,17 +110,6 @@ namespace TPS_PAVI.GUILayer
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // cboUsuarios
-            // 
-            this.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUsuarios.Enabled = false;
-            this.cboUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboUsuarios.FormattingEnabled = true;
-            this.cboUsuarios.Location = new System.Drawing.Point(75, 22);
-            this.cboUsuarios.Name = "cboUsuarios";
-            this.cboUsuarios.Size = new System.Drawing.Size(141, 25);
-            this.cboUsuarios.TabIndex = 5;
             // 
             // label2
             // 
@@ -165,6 +154,13 @@ namespace TPS_PAVI.GUILayer
             this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(87, 18);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(136, 29);
+            this.txtUsuario.TabIndex = 6;
+            // 
             // frmAvanceUsuarioCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,10 +194,10 @@ namespace TPS_PAVI.GUILayer
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.ComboBox cboUsuarios;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiarBusqueda;
         private System.Windows.Forms.Button btnActualizarAvance;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }

@@ -146,9 +146,12 @@ namespace TPS_PAVI.FormulariosABMC.Objetivos
 
             gdrObjetivos.Columns[1].Name = "Nombre corto";
             gdrObjetivos.Columns[1].DataPropertyName = "NombreCortoObjetivo";
+            gdrObjetivos.Columns[1].Width = 175;
 
             gdrObjetivos.Columns[2].Name = "Nombre Largo";
             gdrObjetivos.Columns[2].DataPropertyName = "NombreLargoObjetivo";
+            gdrObjetivos.Columns[2].Width = 200;
+
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             gdrObjetivos.AutoResizeColumnHeadersHeight();

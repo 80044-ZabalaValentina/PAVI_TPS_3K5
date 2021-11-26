@@ -64,6 +64,28 @@ namespace TPS_PAVI.AccesoADatos
             return listadoCate;
         }
 
+        public IList<Usuario> GetByUsuario(Dictionary<string, object> parametros)
+        {
+            List<Usuario> lst = new List<Usuario>();
+            String strSql = string.Concat(" SELECT  au.id_usuario as id_usuario, u.usuario as usuario" +
+                                          "  FROM UsuariosCursoAvance au INNER JOIN Usuarios u ON au.id_usuario = u.id_usuario" +
+                                          " WHERE ");
+
+            if (parametros.ContainsKey("IdCurso"))
+                strSql += " (au.id_curso = @IdCurso) ";
+
+            if (parametros.ContainsKey("Usuario"))
+                strSql += " AND (u.usuario LIKE '%' + @Usuario + '%')";
+
+
+            var resultado = DataManager.GetInstance().ConsultaSQL(strSql, parametros);
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
         public IList<Usuario> GetByFilters(Dictionary<string, object> parametros)
         {
             List<Usuario> lst = new List<Usuario>();

@@ -287,6 +287,8 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
             
             private global::System.Data.DataColumn columnavance;
             
+            private global::System.Data.DataColumn columnidCurso;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -354,6 +356,14 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idCursoColumn {
+                get {
+                    return this.columnidCurso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string usuario, string inicio, string fin, string avance) {
+            public DataTable1Row AddDataTable1Row(string usuario, string inicio, string fin, string avance, string idCurso) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         usuario,
                         inicio,
                         fin,
-                        avance};
+                        avance,
+                        idCurso};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -422,6 +433,7 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
                 this.columninicio = base.Columns["inicio"];
                 this.columnfin = base.Columns["fin"];
                 this.columnavance = base.Columns["avance"];
+                this.columnidCurso = base.Columns["idCurso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +447,8 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
                 base.Columns.Add(this.columnfin);
                 this.columnavance = new global::System.Data.DataColumn("avance", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnavance);
+                this.columnidCurso = new global::System.Data.DataColumn("idCurso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCurso);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,6 +655,22 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string idCurso {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.idCursoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idCurso\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.idCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsusuarioNull() {
                 return this.IsNull(this.tableDataTable1.usuarioColumn);
             }
@@ -685,6 +715,18 @@ namespace PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetavanceNull() {
                 this[this.tableDataTable1.avanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidCursoNull() {
+                return this.IsNull(this.tableDataTable1.idCursoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidCursoNull() {
+                this[this.tableDataTable1.idCursoColumn] = global::System.Convert.DBNull;
             }
         }
         
