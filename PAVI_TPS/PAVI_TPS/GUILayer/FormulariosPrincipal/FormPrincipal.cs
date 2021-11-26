@@ -66,5 +66,10 @@ namespace TPS_PAVI.Formularios
             frmObjetivosPorCurso formulario = new frmObjetivosPorCurso();
             formulario.ShowDialog();
         }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
