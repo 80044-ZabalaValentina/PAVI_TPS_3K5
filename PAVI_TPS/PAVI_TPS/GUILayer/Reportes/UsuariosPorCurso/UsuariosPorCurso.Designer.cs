@@ -29,11 +29,16 @@ namespace PAVI_TPS.GUILayer.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cboCursos = new System.Windows.Forms.ComboBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.rpvUsuarios = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
+            this.dSReporte = new PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso.DSReporte();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dSReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +74,7 @@ namespace PAVI_TPS.GUILayer.Reportes
             // 
             // rpvUsuarios
             // 
-            this.rpvUsuarios.LocalReport.ReportEmbeddedResource = "PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso.ReportUsuariosCurso.rdlc";
+            this.rpvUsuarios.LocalReport.ReportEmbeddedResource = "PAVI_TPS.GUILayer.Reportes.UsuariosPorCurso.ReporteUsuariosCurso.rdlc";
             this.rpvUsuarios.Location = new System.Drawing.Point(14, 74);
             this.rpvUsuarios.Name = "rpvUsuarios";
             this.rpvUsuarios.ServerReport.BearerToken = null;
@@ -87,6 +92,16 @@ namespace PAVI_TPS.GUILayer.Reportes
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dSReporte
+            // 
+            this.dSReporte.DataSetName = "DSReporte";
+            this.dSReporte.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dSReporte;
+            // 
             // frmUsuariosPorCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +116,8 @@ namespace PAVI_TPS.GUILayer.Reportes
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios por curso";
             this.Load += new System.EventHandler(this.frmUsuariosPorCurso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dSReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +130,7 @@ namespace PAVI_TPS.GUILayer.Reportes
         private System.Windows.Forms.Button btnGenerar;
         private Microsoft.Reporting.WinForms.ReportViewer rpvUsuarios;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private UsuariosPorCurso.DSReporte dSReporte;
     }
 }

@@ -34,9 +34,10 @@ namespace PAVI_TPS.GUILayer.Reportes.CantidadObjetivosPorCursos
                             " AND oc.borrado = 0 " +
                             " GROUP BY oc.id_curso,c.nombre";
 
+
             //Data source
             rpvObjetivos.LocalReport.DataSources.Clear();
-            rpvObjetivos.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", DataManager.GetInstance().ConsultaSQL(strSql)));
+            rpvObjetivos.LocalReport.DataSources.Add(new ReportDataSource("DataSet2", DataManager.GetInstance().ConsultaSQL(strSql)));
                     
         }
 

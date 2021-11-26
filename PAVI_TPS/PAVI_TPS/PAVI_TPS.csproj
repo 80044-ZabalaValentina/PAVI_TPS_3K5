@@ -137,10 +137,10 @@
     <Compile Include="GUILayer\Objetivos\FormObjetivos.designer.cs">
       <DependentUpon>FormObjetivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.Designer.cs">
+    <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DSGrafico.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+      <DependentUpon>DSGrafico.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ObjetivosPorCurso.cs">
       <SubType>Form</SubType>
@@ -148,13 +148,13 @@
     <Compile Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ObjetivosPorCurso.Designer.cs">
       <DependentUpon>ObjetivosPorCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DSReporte.cs">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.Designer.cs">
+    <Compile Include="GUILayer\Reportes\UsuariosPorCurso\DSReporte.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>DSReporte.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reportes\UsuariosPorCurso\UsuariosPorCurso.cs">
       <SubType>Form</SubType>
@@ -204,7 +204,7 @@
       <DependentUpon>ObjetivosPorCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\CantidadObjetivosPorCursos\ReportObjetivosPorCursos.rdlc" />
-    <EmbeddedResource Include="GUILayer\Reportes\UsuariosPorCurso\ReportUsuariosCurso.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\UsuariosPorCurso\ReporteUsuariosCurso.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\UsuariosPorCurso\UsuariosPorCurso.resx">
       <DependentUpon>UsuariosPorCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,27 +218,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xsc">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DSGrafico.xsc">
+      <DependentUpon>DSGrafico.xsd</DependentUpon>
     </None>
-    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xsd">
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DSGrafico.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSGrafico.Designer.cs</LastGenOutput>
     </None>
-    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DataSet2.xss">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <None Include="GUILayer\Reportes\CantidadObjetivosPorCursos\DSGrafico.xss">
+      <DependentUpon>DSGrafico.xsd</DependentUpon>
     </None>
-    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DSReporte.xsc">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
     </None>
-    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xsd">
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DSReporte.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
     </None>
-    <None Include="GUILayer\Reportes\UsuariosPorCurso\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="GUILayer\Reportes\UsuariosPorCurso\DSReporte.xss">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
